@@ -1,7 +1,20 @@
 <div class="photo">
   <div class="photo_preview">
-    <div *ngFor="let photo of photos" class="img-wrapper">
+    <div  *ngFor="let photo of photos" class="img-wrapper" (mouseenter)=select(photo) >
     <img src="{{photo.preview}}">
     </div>
+  </div>
+    <div  class="photo_big">
+      <div [ngStyle]="Lens" #lens class="lens" (mousemove)=getCursorPos($event)></div>
+      <img #photo src="{{selected.big}}" (mouseenter)=zooming();  (mousemove)=getCursorPos($event); alt="big">
+    </div>
+  <div #zoom class="photo_info">
+    <p>bla - bla - bla</p>
+    <p>bla - bla - bla</p>
+    <p>bla - bla - bla</p>
+    <p>bla - bla - bla</p>
+    <p>bla - bla - bla</p>
+  <div *ngIf='Zoom.on' [ngStyle]="Zoom" class="photo_zoom"></div>
+  </div>
 </div>
-</div>
+

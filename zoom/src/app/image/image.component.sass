@@ -2,6 +2,9 @@
   width: 70%
   margin: 10% auto
   border: 1px solid black
+  display: flex
+  justify-content: space-around
+  position: relative
   &_preview
     width: 7%
     .img-wrapper
@@ -10,3 +13,17 @@
       img
         display: block
         margin: 0 auto
+  &_big
+    position: relative
+    width: 45%
+    .lens
+      position: absolute
+      border: 1px solid black
+  &_info
+    width: 45%
+  &_zoom
+    width: 45%
+    position: absolute
+    right: 0
+    top: 0
+    border: 1px solid black
