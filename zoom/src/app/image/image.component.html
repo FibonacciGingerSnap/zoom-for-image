@@ -4,9 +4,9 @@
     <img src="{{photo.preview}}">
     </div>
   </div>
-    <div  class="photo_big">
-      <div [ngStyle]="Lens" #lens class="lens" (mousemove)=getCursorPos($event)></div>
-      <img #photo src="{{selected.big}}" (mouseenter)=zooming();  (mousemove)=getCursorPos($event); alt="big">
+    <div (click)=check(); class="photo_big">
+      <div [ngStyle]="Lens" #lens (mousemove)="moveLens($event)" class="lens"></div>
+      <img #photo src="{{selected.big}}" (mouseenter)=zoomInit(); alt="big">
     </div>
   <div #zoom class="photo_info">
     <p>bla - bla - bla</p>
