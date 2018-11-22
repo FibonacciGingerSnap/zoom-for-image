@@ -1,20 +1,9 @@
 <div class="photo">
-  <div class="photo_preview">
-    <div  *ngFor="let photo of photos" class="img-wrapper" (mouseenter)=select(photo) >
-    <img src="{{photo.preview}}">
-    </div>
+  <div class="photo_big" [@cardAnimator]="animationState" (@cardAnimator.done)="resetAnimationState()" (swipeleft)="startAnimation('slideOutLeft')"
+       (swiperight)="startAnimation('zoomOutRight')" (swipeup)="startAnimation('rotateOutUpRight')" (swipedown)="startAnimation('flipOutY')" >
+    <img draggable="false"  src="{{ selected.big }}" alt="">
   </div>
-    <div (click)=check(); class="photo_big">
-      <div [ngStyle]="Lens" #lens (mousemove)="moveLens($event)" class="lens"></div>
-      <img #photo src="{{selected.big}}" (mouseenter)=zoomInit(); alt="big">
-    </div>
-  <div #zoom class="photo_info">
-    <p>bla - bla - bla</p>
-    <p>bla - bla - bla</p>
-    <p>bla - bla - bla</p>
-    <p>bla - bla - bla</p>
-    <p>bla - bla - bla</p>
-  <div *ngIf='Zoom.on' [ngStyle]="Zoom" class="photo_zoom"></div>
+  <div class="slider">
+    <div *ngFor="let photo of photos" class="slider__dots" [ngClass]="{'active': photo.id===selected.id}"></div>
   </div>
 </div>
-

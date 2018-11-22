@@ -5,27 +5,26 @@
   display: flex
   justify-content: space-around
   position: relative
-  &_preview
-    width: 7%
-    .img-wrapper
-      padding: 5px
-      border: 1px solid black
-      img
-        display: block
-        margin: 0 auto
   &_big
-    position: relative
-    width: 40%
+    margin: 0 auto
+    width: 50%
     img
-      width: 100%
-    .lens
-      position: absolute
+      display: block
+      margin: 0 auto
+  .slider
+    display: flex
+    justify-self: center
+    align-items: center
+    margin-right: 5rem
+    &__dots
+      width: 10px
+      height: 10px
       border: 1px solid black
-  &_info
-    width: 45%
-  &_zoom
-    width: 45%
-    position: absolute
-    right: 0
-    top: 0
-    border: 1px solid black
+      border-radius: 50%
+      background: black
+      margin: 1rem
+      &.active
+        width: 15px
+        height: 15px
+
+
