@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { ImageComponent } from './image/image.component';
 import { VideoComponent } from './video/video.component';
 import {HttpClientModule} from '@angular/common/http';
+import { SliderComponent } from './slider/slider.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ImageComponent,
-    VideoComponent
+    VideoComponent,
+    SliderComponent
   ],
   imports: [
     BrowserModule,
